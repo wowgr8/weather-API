@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // new line
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -13,6 +14,7 @@ module.exports = {
     contentBase: './dist'      // new line
   },
   plugins: [
+    new Dotenv(),
     new CleanWebpackPlugin(), // new line
     new HtmlWebpackPlugin({
       title: 'weather-API',
